@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/masterXXX'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,6 +39,6 @@ jobs:
           secret_key: ${{ secrets.RANCHER_SECRET_KEY }}
           stack: ${{ secrets.RANCHER_STACK }}
         env:
-          DROPBOX_IMAGE: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_REPOSITORY }}:${{ github.sha }}
+          DROPBOX_IMAGE: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_REPOSITORY }}:fe85d61d06b6e584c384cb6593d6523237836b25
           DROPBOX_PATH: ${{ secrets.DROPBOX_PATH }}
           DROPBOX_SETTINGS_PATH: ${{ secrets.DROPBOX_SETTINGS_PATH }}
