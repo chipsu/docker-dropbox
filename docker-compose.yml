@@ -1,7 +1,7 @@
 version: '2'
 services:
   dropbox:
-    image: $DROPBOX_IMAGE
+    image: ${DROPBOX_IMAGE}
     labels:
       io.rancher.scheduler.affinity:host_label: dropbox=true
     environment:
@@ -11,6 +11,6 @@ services:
     volumes:
     - /etc/timezone:/etc/timezone
     - /etc/localtime:/etc/localtime
-    - $DROPBOX_PATH:/opt/dropbox/Dropbox
-    - $DROPBOX_SETTINGS_PATH:/opt/dropbox/.dropbox
+    - ${DROPBOX_PATH}:/opt/dropbox/Dropbox
+    - ${DROPBOX_SETTINGS_PATH}:/opt/dropbox/.dropbox
     network_mode: host
