@@ -22,7 +22,7 @@ jobs:
           repository: ${{ secrets.DOCKER_REPOSITORY }}
           tag_with_ref: true
           tag_with_sha: true
-          tags: github-ci
+          tags: github-ci,${{ github.sha }}
 
   deploy:
     if: github.ref == 'refs/heads/master'
@@ -40,5 +40,5 @@ jobs:
           stack: ${{ secrets.RANCHER_STACK }}
         env:
           DROPBOX_IMAGE: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_REPOSITORY }}:${{ github.sha }}
-          DROPBOX_PATH: ${{ secrets.DROPBOX_PATH }}/${{ secrets.DOCKER_REPOSITORY }}:${{ github.sha }}
+          DROPBOX_PATH: ${{ secrets.DROPBOX_PATH }}
           DROPBOX_SETTINGS_PATH: ${{ secrets.DROPBOX_SETTINGS_PATH }}
