@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy
-        uses: chipsu/rancher-deploy-action@v2
+        uses: chipsu/rancher-deploy-action@v3
         with:
           url: ${{ secrets.RANCHER_URL }}
           access_key: ${{ secrets.RANCHER_ACCESS_KEY }}
