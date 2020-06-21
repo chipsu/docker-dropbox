@@ -32,14 +32,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy
-        uses: chipsu/rancher-deploy-action@v3
+        uses: chipsu/rancher-deploy-action@v4
         with:
           url: ${{ secrets.RANCHER_URL }}
           access_key: ${{ secrets.RANCHER_ACCESS_KEY }}
           secret_key: ${{ secrets.RANCHER_SECRET_KEY }}
           stack: ${{ secrets.RANCHER_STACK }}
+          action: deploy  
         env:
           DROPBOX_IMAGE: nginx:1-alpine
           DROPBOX_PATH: /tmp
-          DROPBOX_SETTINGS_PATH: /tmp
+          DROPBOX_SETTINGS_PATH: /tmp  
 
